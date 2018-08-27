@@ -1,0 +1,109 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "mq",
+    "description": "API for mq",
+    "version": "0.0.1"
+  },
+  "paths": {
+    "/version": {
+      "x-swagger-router-controller": "monitor",
+      "get": {
+        "operationId": "version",
+        "description": "get the microservice`s version",
+        "responses": {
+          "200": {
+            "description": "microservice`s version",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "$ref": "#/definitions/ErrorResponse"
+          }
+        }
+      }
+    },
+    "/ping": {
+      "x-swagger-router-controller": "monitor",
+      "get": {
+        "operationId": "ping",
+        "description": "ping the the microservice",
+        "responses": {
+          "200": {
+            "description": "is microservice`s up",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "$ref": "#/definitions/ErrorResponse"
+          }
+        }
+      }
+    },
+    "/getenv": {
+      "x-swagger-router-controller": "monitor",
+      "get": {
+        "operationId": "getenv",
+        "description": "get microservice's environment variables",
+        "responses": {
+          "200": {
+            "description": "environment variables of the microservice",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "$ref": "#/definitions/ErrorResponse"
+          }
+        }
+      }
+    },
+    "/mqListener": {
+      "x-swagger-router-controller": "mq",
+      "get": {
+        "operationId": "mqListener",
+         "description": "mq poc, listen to q and print the msg",
+         "responses": {
+            "200": {
+              "description": "Success",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "default": {
+               "description": "Error",
+               "schema": {
+                  "$ref": "#/definitions/ErrorResponse"
+               }
+            }
+         }
+      }
+   }
+
+  },
+  "definitions": {
+    "ErrorResponse": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "format": "uri",
+          "description": "URI that identifies the problem type. example=https://zalando.github.io/problem/constraint-violation,"
+        },
+        "title": {
+          "type": "string",
+          "description": "problem description and data"
+        },
+        "status": {
+          "type": "string",
+          "description": "code "
+        }
+      }
+    }
+  }
+}
+
+
+

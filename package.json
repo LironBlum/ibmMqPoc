@@ -1,0 +1,27 @@
+{
+  "name": "mq",
+  "version": "0.0.1",
+  "main": "start.js",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "express": "^4.16.3",
+    "ibmmq": "^0.8.5",
+    "lodash": "^4.17.5",
+    "nodemon": "^1.17.3",
+    "swagger-tools": "^0.10.3",
+    "uuid": "^3.2.1",
+    "winston": "^2.4.1",
+    "winston-mongodb": "^2.0.10"
+  },
+  "scripts": {
+    "start": "node ./start.js",
+    "watch": "nodemon ./start.js",
+    "debug": "node --inspect ./start.js"
+  }
+}

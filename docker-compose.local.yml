@@ -1,0 +1,20 @@
+version: '2'
+services:
+  mq:
+    container_name: mq-container
+    image: mq-image
+    build:
+      context: .
+    volumes:
+      - ./:/var/app
+    env_file: ./variables.env
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "9300:9300"
+
+
+
+
+
+
